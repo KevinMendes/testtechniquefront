@@ -1,24 +1,48 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import Footer from './component/footer';
+import Modal from './component/modal';
 
 function App() {
+
+  const [show, setShow] = useState(false);
+
+  const handleOpen = () => {
+    setShow(true);
+  };
+  const handleClose = () => {
+    setShow(false)
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="wrap">
+      <div className="wrapped">
+          <button className="blue-button"
+                  type="button"
+                  onClick={handleOpen}
+                  >
+                    Ouvrir la modale 1
+          </button>
+          <h1 className="title">Un premier titre</h1>
+          <p className="text">Modale basique</p>
+          <Footer />
+      </div>
+
+      <div className="wrapped">
+          <button className="blue-button"
+                  type="button"
+                  onClick={handleOpen}
+                  >
+                    Ouvrir la modale 2
+          </button>
+          <h1 className="title">Un premier titre</h1>
+          <p className="text">Modale basique</p>
+          <Footer />
+      </div>
+      <Modal show={show} handleClose={handleClose}>
+        <h1 className="modalTitle">Title</h1>
+        <p>Content of the modal</p>
+      </Modal>
     </div>
   );
 }
