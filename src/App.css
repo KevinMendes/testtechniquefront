@@ -13,7 +13,19 @@
 	border-radius:0px;
 	border:0px;
 	display:inline-block;
-	color:#ffffff;
+	color: white;
+	font-family:Arial;
+	font-size:15px;
+	padding:9px 23px;
+  
+}
+.white-button {
+
+  background-color:white;
+  margin: 2vw;
+	border-radius:0px;
+	border:0px;
+	display:inline-block;
 	font-family:Arial;
 	font-size:15px;
 	padding:9px 23px;
